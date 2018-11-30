@@ -1,5 +1,4 @@
 #include <iostream>
-#include <tuple>
 #include <type_traits>
 #include <vector>
 
@@ -87,13 +86,25 @@ void PrintVector(const std::vector<T>& vector)
 int main(int argc, char* argv[])
 {
 	std::vector<int> numbers {  6, 5, 9, 2, 7, 1 };
+	std::vector<int> moreNumbers { 6, 18, 16 };
+
 	std::vector<int> numberProductsDivision = GetProductArrayDivision(numbers);
 	std::vector<int> numberProductsNoDivision = GetProductArrayNoDivision(numbers);
 	std::vector<int> numberProductsVariadic = GetProductArrayVariadic(6, 5, 9, 2, 7, 1);
 
+	std::vector<int> moreNumberProductsDivision = GetProductArrayDivision(moreNumbers);
+	std::vector<int> moreNumberProductsNoDivision = GetProductArrayNoDivision(moreNumbers);
+	std::vector<int> moreNumberProductsVariadic = GetProductArrayVariadic(6, 18, 16);
+
 	PrintVector(numberProductsDivision);
 	PrintVector(numberProductsNoDivision);
 	PrintVector(numberProductsVariadic);
+
+	std::cout << std::endl;
+
+	PrintVector(moreNumberProductsDivision);
+	PrintVector(moreNumberProductsNoDivision);
+	PrintVector(moreNumberProductsVariadic);
 
 	std::cin.get();
 
