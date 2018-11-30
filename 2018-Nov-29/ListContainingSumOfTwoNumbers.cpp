@@ -1,21 +1,25 @@
 #include <iostream>
+#include <unordered_set>
 #include <type_traits>
 #include <vector>
 
 template<typename T, typename = typename std::enable_if<std::is_integral<T>::value>::type>
 bool ContainsTwoNumberSum(const std::vector<T>& numberList, T total)
 {
-	for (int i = 0; i < numberList.size() - 1; i++)
+	std::unordered_set<T> numberHash;
+
+	for (unsigned int i = 0; i < numberList.size(); i++)
 	{
-		for (int offset = 1; (i + offset) < numberList.size(); offset++)
+		if (numberHash.find(total - numberList[i]) != numberHash.end())
 		{
-			if (numberList[i] + numberList[i + offset] == total)
-			{
-				return true;
-			}
+			return true;
+		}
+		else
+		{
+			numberHash.insert(numberList[i]);
 		}
 	}
-
+	
 	return false;
 }
 
@@ -25,7 +29,7 @@ int main(int argc, char* argv[])
 
 	std::cout << std::boolalpha;
 
-	std::cout << ContainsTwoNumberSum(numbers, 1) << std::endl;		// true
+	std::cout << ContainsTwoNumberSum(numbers,  1) << std::endl;	// true
 	std::cout << ContainsTwoNumberSum(numbers, 17) << std::endl;	// true
 	std::cout << ContainsTwoNumberSum(numbers, 41) << std::endl;	// true
 	std::cout << ContainsTwoNumberSum(numbers, 29) << std::endl;	// false
@@ -33,12 +37,12 @@ int main(int argc, char* argv[])
 	std::cout << ContainsTwoNumberSum(numbers, 15) << std::endl;	// true
 	std::cout << ContainsTwoNumberSum(numbers, 64) << std::endl;	// false
 	std::cout << ContainsTwoNumberSum(numbers, 23) << std::endl;	// true
-	std::cout << ContainsTwoNumberSum(numbers, 7) << std::endl;		// true
+	std::cout << ContainsTwoNumberSum(numbers,  7) << std::endl;	// true
 	std::cout << ContainsTwoNumberSum(numbers, -1) << std::endl;	// true
 	std::cout << ContainsTwoNumberSum(numbers, 43) << std::endl;	// true
 	std::cout << ContainsTwoNumberSum(numbers, 28) << std::endl;	// false
 	std::cout << ContainsTwoNumberSum(numbers, 16) << std::endl;	// true
-	std::cout << ContainsTwoNumberSum(numbers, 6) << std::endl;		// true
+	std::cout << ContainsTwoNumberSum(numbers,  6) << std::endl;	// true
 	std::cout << ContainsTwoNumberSum(numbers, 19) << std::endl;	// true
 
 	std::cin.get();
