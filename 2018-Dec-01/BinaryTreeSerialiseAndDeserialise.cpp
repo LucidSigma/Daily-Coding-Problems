@@ -71,12 +71,9 @@ Node* DeserialiseHelper(std::string& subtree)
 	return node;
 }
 
-Node* DeserialiseTree(const std::string& tree)
+Node* DeserialiseTree(std::string tree)
 {
-	std::string treeString(tree);
-	Node* node = DeserialiseHelper(treeString);
-
-	return node;
+	return DeserialiseHelper(tree);
 }
 
 int main(int argc, char* argv[])
