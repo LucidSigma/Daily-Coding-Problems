@@ -38,7 +38,7 @@ unsigned int GetSmallestMissingPositive(std::vector<int>& numbers)
 		}
 	}
 
-	for (int i = nonPositiveCount; i < numbers.size(); i++)
+	for (unsigned int i = nonPositiveCount; i < numbers.size(); i++)
 	{
 		if (numbers[i] > 0)
 		{
