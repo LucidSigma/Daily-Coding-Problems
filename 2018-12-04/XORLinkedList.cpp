@@ -32,7 +32,7 @@ public:
 		DestroyNode(nullptr, head);
 	}
 
-	void Append(int data)
+	void Add(int data)
 	{
 		if (head == nullptr)
 		{
@@ -113,9 +113,9 @@ int main(int argc, char* argv[])
 {
 	XorList<int> xorList;
 
-	xorList.Append(10);
-	xorList.Append(25);
-	xorList.Append(42);
+	xorList.Add(10);
+	xorList.Add(25);
+	xorList.Add(42);
 
 	std::cout << xorList.Get(2) << std::endl;
 	std::cout << xorList[1] << std::endl;
