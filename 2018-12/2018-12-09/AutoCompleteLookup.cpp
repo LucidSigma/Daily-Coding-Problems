@@ -1,3 +1,5 @@
+#include <algorithm>
+#include <cctype>
 #include <iostream>
 #include <string>
 #include <type_traits>
@@ -12,10 +14,12 @@ public:
 	template<typename... Args>
 	static void Add(Args... words)
 	{
-		([](const std::string& word)
+		([](std::string word)
 		{
 			if (!Contains(word))
 			{
+				ConvertToLower(word);
+
 				s_Words.push_back(word);
 			}
 		}(words), ...);
@@ -35,6 +39,11 @@ private:
 		}
 
 		return false;
+	}
+
+	static void ConvertToLower(std::string& word)
+	{
+		std::transform(word.begin(), word.end(), word.begin(), std::tolower);
 	}
 };
 
