@@ -16,10 +16,10 @@ public:
 	{
 		([](std::string word)
 		{
+			ConvertToLower(word);
+			
 			if (!Contains(word))
 			{
-				ConvertToLower(word);
-
 				s_Words.push_back(word);
 			}
 		}(words), ...);
