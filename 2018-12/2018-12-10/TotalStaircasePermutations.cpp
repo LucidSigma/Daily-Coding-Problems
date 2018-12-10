@@ -7,7 +7,7 @@ unsigned int GetStaircasePermutations(unsigned int stairCount, const std::initia
 	std::vector<unsigned int> sequence(stairCount + 1, 0);
 	sequence[0] = 1;
 
-	for (unsigned int i = 1; i < stairCount + 1; i++)
+	for (unsigned int i = 1; i < sequence.size(); i++)
 	{
 		for (unsigned int space : spacings)
 		{
@@ -25,7 +25,7 @@ unsigned int GetStaircasePermutations(unsigned int stairCount, const std::initia
 		}
 	}
 
-	return sequence[stairCount];
+	return sequence[sequence.size() - 1];
 }
 
 int main(int argc, char* argv[])
