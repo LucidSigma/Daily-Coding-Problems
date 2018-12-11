@@ -32,7 +32,7 @@ public:
 		DestroyNode(nullptr, head);
 	}
 
-	void Add(int data)
+	void Add(T data)
 	{
 		if (head == nullptr)
 		{
