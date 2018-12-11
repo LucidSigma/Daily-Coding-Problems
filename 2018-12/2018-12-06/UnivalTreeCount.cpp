@@ -3,12 +3,12 @@
 template<typename T>
 struct Node
 {
-	int value;
+	T value;
 	
 	Node* left = nullptr;
 	Node* right = nullptr;
 
-	Node(int value, Node* left, Node* right)
+	Node(T value, Node* left, Node* right)
 		: value(value), left(left), right(right)
 	{ }
 };
