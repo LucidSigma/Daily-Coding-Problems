@@ -1,14 +1,13 @@
 #include <iostream>
 #include <random>
 
-static std::random_device randomSeed;
-static std::mt19937 randomEngine(randomSeed());
-
 double EstimatePiWithMonteCarlo(unsigned long iterations = 10'000l)
 {
 	constexpr double RADIUS = 0.5;
 	constexpr double RADIUS_PI_RATIO = 1.0 / (RADIUS * RADIUS);
 
+	static std::random_device randomSeed;
+	static std::mt19937 randomEngine(randomSeed());
 	static std::uniform_real_distribution<double> randomGenerator(-RADIUS, RADIUS);
 
 	unsigned long innerCount = 0l;
