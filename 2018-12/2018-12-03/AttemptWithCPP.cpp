@@ -29,22 +29,22 @@ HelperFunctor cons(int a, int b)
 
 int car(HelperFunctor pair)
 {
-	auto first_var = [](int a, int b) -> int
+	auto firstVar = [](int a, int b) -> int
 	{
 		return a;
 	};
 
-	return pair(first_var);
+	return pair(firstVar);
 }
 
 int cdr(HelperFunctor pair)
 {
-	auto second_var = [](int a, int b) -> int
+	auto secondVar = [](int a, int b) -> int
 	{
 		return b;
 	};
 
-	return pair(second_var);
+	return pair(secondVar);
 }
 
 int main(int argc, char* argv[])
