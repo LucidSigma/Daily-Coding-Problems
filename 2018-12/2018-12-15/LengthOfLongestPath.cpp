@@ -4,15 +4,16 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> SplitString(const std::string& text, char delimiter = ' ') {
-	std::string splits;
+std::vector<std::string> SplitString(const std::string& text, char delimiter = ' ')
+{
+	std::string currentToken;
 	std::stringstream reader(text);
 
 	std::vector<std::string> tokens;
 
-	while (std::getline(reader, splits, delimiter))
+	while (std::getline(reader, currentToken, delimiter))
 	{
-		tokens.push_back(splits);
+		tokens.push_back(currentToken);
 	}
 
 	return tokens;
