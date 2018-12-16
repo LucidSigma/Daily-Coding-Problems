@@ -3,7 +3,7 @@
 #include <iostream>
 
 template <unsigned int Size>
-void PrintSubarrayMaximums(const std::array<int, Size> array, unsigned int k) noexcept
+void PrintSubarrayMaximums(const std::array<int, Size>& array, unsigned int k) noexcept
 {
 	std::deque<int> elements(k);
 
