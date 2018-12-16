@@ -21,7 +21,7 @@ void PrintSubarrayMaximums(const std::array<int, Size>& array, unsigned int k) n
 	{
 		std::cout << array[elements.front()] << " ";
 
-		while (!elements.empty() && (elements.front() <= i - k))
+		while (!elements.empty() && (elements.front() <= static_cast<int>(i - k)))
 		{
 			elements.pop_front();
 		}
