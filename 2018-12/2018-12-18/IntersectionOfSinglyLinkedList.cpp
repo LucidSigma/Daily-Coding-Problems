@@ -46,19 +46,8 @@ Node* GetSinglyLinkedListIntersection(Node* listA, Node* listB) noexcept
 	}
 
 	unsigned int difference = std::abs(static_cast<int>(lengthA) - static_cast<int>(lengthB));
-	Node* shorterList = nullptr;
-	Node* longerList = nullptr;
-
-	if (lengthA > lengthB)
-	{
-		shorterList = listB;
-		longerList = listA;
-	}
-	else
-	{
-		shorterList = listA;
-		longerList = listB;
-	}
+	Node* shorterList = lengthA > lengthB ? listB : listA;
+	Node* longerList = lengthA > lengthB ? listA : listB;
 
 	while (difference > 0)
 	{
