@@ -20,15 +20,15 @@ unsigned int FindClassroomCount(const std::array<std::pair<int, int>, Size>& int
 
 	unsigned int currentClassroomsNeeded = 1;
 	unsigned int totalClassroomsNeeded = 1;
-	unsigned int i = 1;
-	unsigned int j = 0;
+	unsigned int startCount = 1;
+	unsigned int endCount = 0;
 
-	while ((i < Size) && (j < Size))
+	while ((startCount < Size) && (endCount < Size))
 	{
-		if (starts[i] <= ends[j])
+		if (starts[startCount] <= ends[endCount])
 		{
 			currentClassroomsNeeded++;
-			i++;
+			startCount++;
 
 			if (currentClassroomsNeeded > totalClassroomsNeeded)
 			{
@@ -38,7 +38,7 @@ unsigned int FindClassroomCount(const std::array<std::pair<int, int>, Size>& int
 		else
 		{
 			currentClassroomsNeeded--;
-			j++;
+			endCount++;
 		}
 	}
 
