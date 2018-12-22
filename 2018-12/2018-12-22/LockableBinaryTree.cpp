@@ -82,7 +82,7 @@ public:
 	}
 
 private:
-	bool CanBeLocked()
+	bool CanBeLocked() const
 	{
 		if (descendantLockCount > 0)
 		{
