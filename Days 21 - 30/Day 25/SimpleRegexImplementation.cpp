@@ -56,7 +56,7 @@ int main(int argc, const char* argv[])
 	std::cout << MatchSimpleRegex("ra.", "raymond") << "\n";
 
 	std::cout << MatchSimpleRegex(".*", "aaaaaaaaaaaaaa") << "\n";
-	std::cout << MatchSimpleRegex(".", "aaaaaaaaaaaaaa") << std::endl;;
+	std::cout << MatchSimpleRegex(".", "aaaaaaaaaaaaaa") << std::endl;
 	
 	std::cin.get();
 
