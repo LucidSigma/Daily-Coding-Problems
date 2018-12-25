@@ -45,7 +45,7 @@ bool HasValidBrackets(const std::string& string) noexcept
 
 	std::stack<char> bracketStack;
 
-	for (const char& letter : string)
+	for (const char letter : string)
 	{
 		if (isBracket(letter, Open))
 		{
