@@ -11,7 +11,7 @@ std::vector<std::string> JustifyText(const std::vector<std::string>& words, int 
 
 	for (const auto& word : words)
 	{
-		if ((currentLine + word).length() + 1 <= lineLength)
+		if ((currentLine + word).length() < lineLength)
 		{
 			currentLine += word + ' ';
 
