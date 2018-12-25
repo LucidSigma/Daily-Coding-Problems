@@ -34,7 +34,7 @@ bool HasValidBrackets(const std::string& string) noexcept
 	{
 		for (unsigned int i = 0; i < BRACKET_TYPE_COUNT; i++)
 		{
-			if ((bracket == BRACKETS[i][Open]) || bracket == BRACKETS[i][Closed])
+			if ((bracket == BRACKETS[i][Open]) || (bracket == BRACKETS[i][Closed]))
 			{
 				return static_cast<Type>(i);
 			}
