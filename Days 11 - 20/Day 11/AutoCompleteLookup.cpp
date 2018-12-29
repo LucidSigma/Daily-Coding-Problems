@@ -2,7 +2,6 @@
 #include <cctype>
 #include <iostream>
 #include <string>
-#include <type_traits>
 #include <vector>
 
 class WordList
