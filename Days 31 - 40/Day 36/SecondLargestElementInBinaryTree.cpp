@@ -27,7 +27,7 @@ struct Node
 	}
 };
 
-class BinaryTree
+class BinarySearchTree
 {
 private:
 	Node* root = nullptr;
@@ -35,14 +35,14 @@ private:
 	unsigned int count = 0;
 
 public:
-	BinaryTree() = default;
+	BinarySearchTree() = default;
 
-	BinaryTree(const std::initializer_list<int>& values)
+	BinarySearchTree(const std::initializer_list<int>& values)
 	{
 		Insert(values);
 	}
 
-	~BinaryTree() noexcept
+	~BinarySearchTree() noexcept
 	{
 		if (root != nullptr)
 		{
@@ -117,7 +117,7 @@ void SecondLargestHelper(Node* node, unsigned int& counter, int& secondLargest)
 	SecondLargestHelper(node->left, counter, secondLargest);
 }
 
-int SecondLargest(BinaryTree& binaryTree)
+int SecondLargest(BinarySearchTree& binaryTree)
 {
 	unsigned int counter = 0;
 	int secondLargest = std::numeric_limits<int>::min();
@@ -136,7 +136,7 @@ int SecondLargest(BinaryTree& binaryTree)
 
 int main(int argc, const char* argv[])
 {
-	BinaryTree tree({ 50, 30, 20, 40, 70, 60, 80 });
+	BinarySearchTree tree({ 50, 30, 20, 40, 70, 60, 80 });
 
 	std::cout << "Second largest element in binary tree: " << SecondLargest(tree) << "\n";
 
