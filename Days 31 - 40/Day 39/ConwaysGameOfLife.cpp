@@ -60,7 +60,7 @@ void PrintBoard(const std::vector<std::string>& board, unsigned int iteration = 
 	}
 }
 
-unsigned int GetNeighbourCount(const std::vector<std::string>& board, unsigned int x, unsigned int y)
+unsigned int GetNeighbourCount(const std::vector<std::string>& board, unsigned int x, unsigned int y) noexcept
 {
 	unsigned int count = 0;
 
@@ -131,7 +131,7 @@ unsigned int GetNeighbourCount(const std::vector<std::string>& board, unsigned i
 	return count;
 }
 
-void UpdateCellMinAndMax(const std::vector<Cell>& cells)
+void UpdateCellMinAndMax(const std::vector<Cell>& cells) noexcept
 {
 	Cell::minX = std::numeric_limits<int>::max();
 	Cell::maxX = std::numeric_limits<int>::min();
@@ -152,7 +152,7 @@ void UpdateCellMinAndMax(const std::vector<Cell>& cells)
 	Cell::maxY++;
 }
 
-std::vector<std::string> CellsToBoard(const std::vector<Cell>& cells)
+std::vector<std::string> CellsToBoard(const std::vector<Cell>& cells) noexcept
 {
 	std::vector<std::string> board;
 
@@ -169,7 +169,7 @@ std::vector<std::string> CellsToBoard(const std::vector<Cell>& cells)
 	return board;
 }
 
-std::vector<Cell> CreateCellsFromBoard(const std::vector<std::string>& board)
+std::vector<Cell> CreateCellsFromBoard(const std::vector<std::string>& board) noexcept
 {
 	std::vector<Cell> cells;
 
