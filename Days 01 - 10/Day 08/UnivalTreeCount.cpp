@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
 
 	Node<int>* root = new Node<int>(0, childA, childB);
 
-	std::cout << GetUnivalTreeCount(root) << std::endl;
+	std::cout << GetUnivalTreeCount(root) << "\n";
 
 	FreeNodeMemory(root);
 
