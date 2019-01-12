@@ -51,17 +51,11 @@ unsigned int GetSmallestMissingPositive(std::vector<int>& numbers)
 
 int main(int argc, char* argv[])
 {
-	std::vector<int> numbers { 6, 3, 9, 1, -7, -3, 2, -4, 2, 1, 0, -9, 4, 5 };
-	std::cout << GetSmallestMissingPositive(numbers) << std::endl;
+	std::vector<int> numbers { 3, 4, -1, 1 };
+	std::cout << GetSmallestMissingPositive(numbers) << "\n";
 
-	std::vector<int> moreNumbers { 3, 4, 1, -1 };
-	std::cout << GetSmallestMissingPositive(moreNumbers) << std::endl;
-
-	std::vector<int> evenMoreNumbers { 1, 2, 0 };
-	std::cout << GetSmallestMissingPositive(evenMoreNumbers) << std::endl;
-
-	std::vector<int> evenEvenMoreNumbers { -1, -2, 0, -6, -4 };
-	std::cout << GetSmallestMissingPositive(evenEvenMoreNumbers) << std::endl;
+	std::vector<int> moreNumbers { 1, 2, 0 };
+	std::cout << GetSmallestMissingPositive(moreNumbers) << "\n";
 
 	std::cin.get();
 	
