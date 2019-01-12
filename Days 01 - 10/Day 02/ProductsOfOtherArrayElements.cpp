@@ -3,7 +3,7 @@
 #include <vector>
 
 // With division
-template<typename T, typename = typename std::enable_if<std::is_arithmetic<T>::value>::type>
+template <typename T, typename = typename std::enable_if<std::is_arithmetic<T>::value>::type>
 std::vector<T> GetProductArrayDivision(const std::vector<T>& numbers)
 {
 	int finalProduct = 1;
@@ -25,7 +25,7 @@ std::vector<T> GetProductArrayDivision(const std::vector<T>& numbers)
 }
 
 // Alternate division solution (very optimal)
-template<typename... Numbers>
+template <typename... Numbers>
 std::vector<int> GetProductArrayVariadic(Numbers... numbers)
 {
 	int totalProduct = (numbers * ...);
@@ -40,7 +40,7 @@ std::vector<int> GetProductArrayVariadic(Numbers... numbers)
 }
 
 // Without division
-template<typename T, typename = typename std::enable_if<std::is_arithmetic<T>::value>::type>
+template <typename T, typename = typename std::enable_if<std::is_arithmetic<T>::value>::type>
 std::vector<T> GetProductArrayNoDivision(const std::vector<T>& numbers)
 {
 	const unsigned int SIZE = numbers.size();
@@ -72,7 +72,7 @@ std::vector<T> GetProductArrayNoDivision(const std::vector<T>& numbers)
 	return finalProducts;
 }
 
-template<typename T>
+template <typename T>
 void PrintVector(const std::vector<T>& vector)
 {
 	for (const T& item : vector)
@@ -80,27 +80,27 @@ void PrintVector(const std::vector<T>& vector)
 		std::cout << item << " ";
 	}
 
-	std::cout << std::endl;
+	std::cout << "\n";
 }
 
 int main(int argc, char* argv[])
 {
-	std::vector<int> numbers {  6, 5, 9, 2, 7, 1 };
-	std::vector<int> moreNumbers { 6, 18, 16 };
+	std::vector<int> numbers { 1, 2, 3, 4, 5 };
+	std::vector<int> moreNumbers { 3, 2, 1 };
 
 	std::vector<int> numberProductsDivision = GetProductArrayDivision(numbers);
 	std::vector<int> numberProductsNoDivision = GetProductArrayNoDivision(numbers);
-	std::vector<int> numberProductsVariadic = GetProductArrayVariadic(6, 5, 9, 2, 7, 1);
+	std::vector<int> numberProductsVariadic = GetProductArrayVariadic(1, 2, 3, 4, 5);
 
 	std::vector<int> moreNumberProductsDivision = GetProductArrayDivision(moreNumbers);
 	std::vector<int> moreNumberProductsNoDivision = GetProductArrayNoDivision(moreNumbers);
-	std::vector<int> moreNumberProductsVariadic = GetProductArrayVariadic(6, 18, 16);
+	std::vector<int> moreNumberProductsVariadic = GetProductArrayVariadic(3, 2, 1);
 
 	PrintVector(numberProductsDivision);
 	PrintVector(numberProductsNoDivision);
 	PrintVector(numberProductsVariadic);
 
-	std::cout << std::endl;
+	std::cout << "\n";
 
 	PrintVector(moreNumberProductsDivision);
 	PrintVector(moreNumberProductsNoDivision);
