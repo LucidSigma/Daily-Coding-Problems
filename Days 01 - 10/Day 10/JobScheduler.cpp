@@ -13,18 +13,18 @@ void ScheduleJob(Func function, unsigned int callbackMilliseconds, Args... param
 
 void JobA()
 {
-	std::cout << "Job A has been completed." << std::endl;
+	std::cout << "Job A has been completed." << "\n";
 }
 
 void JobB(int a, int b)
 {
-	std::cout << "Job B completed with result of " << (a + b) << "." << std::endl;
+	std::cout << "Job B completed with result of " << (a + b) << "." << "\n";
 }
 
 void JobC(const char* text, float a, float b)
 {
 	std::cout << text << "\n";
-	std::cout << "Job C completed with result of " << (a + b) << "." << std::endl;
+	std::cout << "Job C completed with result of " << (a + b) << "." << "\n";
 }
 
 int main(int argc, char* argv[])
