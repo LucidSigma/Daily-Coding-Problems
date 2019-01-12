@@ -23,10 +23,10 @@ T FindMaxNonAdjacentSum(const std::vector<T>& numbers)
 int main(int argc, char* argv[])
 {
 	std::vector<int> numbers { 2, 4, 6, 2, 5 };
-	std::cout << FindMaxNonAdjacentSum(numbers) << std::endl;
+	std::cout << FindMaxNonAdjacentSum(numbers) << "\n";
 
 	std::vector<int> moreNumbers { 5, 1, 1, 5 };
-	std::cout << FindMaxNonAdjacentSum(moreNumbers) << std::endl;
+	std::cout << FindMaxNonAdjacentSum(moreNumbers) << "\n";
 
 	std::cin.get();
 
