@@ -85,9 +85,9 @@ int main(int argc, char* argv[])
 
 	Node node("root", left, right);
 
-	std::cout << SerialiseTree(&node) << std::endl;
+	std::cout << SerialiseTree(&node) << "\n";
 
-	assert(DeserialiseTree(SerialiseTree(&node))->left->left->val == "left.left");	// Assertion passes
+	assert(DeserialiseTree(SerialiseTree(&node))->left->left->val == "left.left");
 
 	std::cin.get();
 	
