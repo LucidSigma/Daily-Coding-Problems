@@ -117,9 +117,17 @@ int main(int argc, char* argv[])
 	xorList.Add(25);
 	xorList.Add(42);
 
-	std::cout << xorList.Get(2) << std::endl;
-	std::cout << xorList[1] << std::endl;
-	//std::cout << xorList[4] << std::endl; // Creates exception
+	std::cout << xorList.Get(2) << "\n";
+	std::cout << xorList[1] << "\n";
+	
+	try
+	{
+		std::cout << xorList[4] << "\n";
+	}
+	catch (const std::out_of_range& exception)
+	{
+		std::cout << "Variable out of range.\n";	
+	}
 
 	std::cin.get();
 	
