@@ -28,9 +28,9 @@ unsigned int GetDecodings(const std::string& code)
 
 int main(int argc, char* argv[])
 {
-	std::cout << GetDecodings("111") << std::endl;
-	std::cout << GetDecodings("1112") << std::endl;
-	std::cout << GetDecodings("1220487311121120348981012121") << std::endl;
+	std::cout << GetDecodings("111") << "\n";
+	std::cout << GetDecodings("1112") << "\n";
+	std::cout << GetDecodings("1220487311121120348981012121") << "\n";
 
 	std::cin.get();
 
