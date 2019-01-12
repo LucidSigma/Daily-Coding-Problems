@@ -49,8 +49,8 @@ int cdr(HelperFunctor pair)
 
 int main(int argc, char* argv[])
 {
-	std::cout << car(cons(3, 4)) << std::endl;
-	std::cout << cdr(cons(3, 4)) << std::endl;
+	std::cout << car(cons(3, 4)) << "\n";
+	std::cout << cdr(cons(3, 4)) << "\n";
 
 	std::cin.get();
 	
