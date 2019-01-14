@@ -47,7 +47,7 @@ unsigned int GetMaxLengthOfDistinctSubstring(const std::string& string, unsigned
 
 	if (uniqueCharacters < k)
 	{
-		std::cout << string << std::endl;
+		std::cout << string << "\n";
 
 		return length;
 	}
@@ -78,14 +78,14 @@ unsigned int GetMaxLengthOfDistinctSubstring(const std::string& string, unsigned
 		}
 	}
 
-	std::cout << string.substr(maxStart, startEndDifference) << std::endl;
+	std::cout << string.substr(maxStart, startEndDifference) << "\n";
 
 	return startEndDifference;
 }
 
 int main(int argc, char* argv[])
 {
-	std::cout << GetMaxLengthOfDistinctSubstring("ifjhfunjfjsfhkshjsnjc", 5) << std::endl;
+	std::cout << GetMaxLengthOfDistinctSubstring("ifjhfunjfjsfhkshjsnjc", 5) << "\n";
 
 	std::cin.get();
 
