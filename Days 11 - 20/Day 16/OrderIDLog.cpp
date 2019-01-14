@@ -71,8 +71,6 @@ int main(int argc, char* argv[])
 		std::cout << orderList.GetLast(i) << "\n";
 	}
 
-	std::cout << std::flush;
-
 	std::cin.get();
 
 	return 0;
