@@ -34,7 +34,7 @@ void PrintSubarrayMaximums(const std::array<int, Size>& array, unsigned int k) n
 		elements.push_back(i);
 	}
 
-	std::cout << array[elements.front()] << std::endl;
+	std::cout << array[elements.front()] << "\n";
 }
 
 int main(int argc, char* argv[])
