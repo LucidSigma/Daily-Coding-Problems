@@ -30,7 +30,7 @@ unsigned int GetStaircasePermutations(unsigned int stairCount, const std::initia
 
 int main(int argc, char* argv[])
 {
-	std::cout << GetStaircasePermutations(21, { 1, 3, 5 }) << std::endl;
+	std::cout << GetStaircasePermutations(21, { 1, 3, 5 }) << "\n";
 
 	std::cin.get();
 
