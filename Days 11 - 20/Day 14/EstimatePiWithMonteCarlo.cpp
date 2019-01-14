@@ -30,14 +30,14 @@ int main(int argc, char* argv[])
 {
 	std::cout.precision(10);
 
-	std::cout << EstimatePiWithMonteCarlo(10) << std::endl;
-	std::cout << EstimatePiWithMonteCarlo(100) << std::endl;
-	std::cout << EstimatePiWithMonteCarlo(1'000) << std::endl;
-	std::cout << EstimatePiWithMonteCarlo(10'000) << std::endl;
-	std::cout << EstimatePiWithMonteCarlo(100'000) << std::endl;
-	std::cout << EstimatePiWithMonteCarlo(1'000'000) << std::endl;
-	std::cout << EstimatePiWithMonteCarlo(10'000'000) << std::endl;
-	std::cout << EstimatePiWithMonteCarlo(100'000'000) << std::endl;
+	std::cout << EstimatePiWithMonteCarlo(10) << "\n";
+	std::cout << EstimatePiWithMonteCarlo(100) << "\n";
+	std::cout << EstimatePiWithMonteCarlo(1'000) << "\n";
+	std::cout << EstimatePiWithMonteCarlo(10'000) << "\n";
+	std::cout << EstimatePiWithMonteCarlo(100'000) << "\n";
+	std::cout << EstimatePiWithMonteCarlo(1'000'000) << "\n";
+	std::cout << EstimatePiWithMonteCarlo(10'000'000) << "\n";
+	std::cout << EstimatePiWithMonteCarlo(100'000'000) << "\n";
 
 	std::cin.get();
 
