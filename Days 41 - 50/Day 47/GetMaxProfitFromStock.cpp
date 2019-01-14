@@ -2,10 +2,16 @@
 #include <array>
 #include <iostream>
 #include <limits>
+#include <stdexcept>
 
 template <unsigned int Size>
-int GetMaxProfitFromStock(const std::array<int, Size>& stocks) noexcept
+int GetMaxProfitFromStock(const std::array<int, Size>& stocks)
 {
+	if (stocks.size() <= 1)
+	{
+		throw std::invalid_argument("Stocks array too small.");
+	}
+
 	int minStock = stocks[0];
 	int maxProfit = std::numeric_limits<int>::min();
 
