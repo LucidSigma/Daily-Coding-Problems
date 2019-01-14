@@ -78,7 +78,7 @@ int main(int argc, const char* argv[])
 	Node* node1 = new Node(1, node8);
 	Node* node99 = new Node(99, node1);
 
-	std::cout << GetSinglyLinkedListIntersection(node3, node99)->value << std::endl;
+	std::cout << GetSinglyLinkedListIntersection(node3, node99)->value << "\n";
 
 	std::cin.get();
 
