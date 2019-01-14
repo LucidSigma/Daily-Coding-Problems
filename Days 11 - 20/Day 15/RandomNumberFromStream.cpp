@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
 	std::cin.clear();
 	std::cin.ignore(10000, '\n');
 
-	std::cout << "Random number: " << randomNumber << std::endl;
+	std::cout << "Random number: " << randomNumber << "\n";
 
 	std::cin.get();
 
