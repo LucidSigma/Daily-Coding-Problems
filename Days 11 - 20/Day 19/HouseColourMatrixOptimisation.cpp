@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 
 	const std::array<std::array<int, 3>, 5> matrix { row1, row2, row3, row4, row5 };
 
-	std::cout << GetOptimisedCost(matrix) << std::endl;
+	std::cout << GetOptimisedCost(matrix) << "\n";
 
 	std::cin.get();
 
