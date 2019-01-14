@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 	std::cout << LengthofLongestPath("") << "\n";
 	std::cout << LengthofLongestPath("dir\n\tfile.ext") << "\n";
 	std::cout << LengthofLongestPath("dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext") << "\n";
-	std::cout << LengthofLongestPath("dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext") << std::endl;
+	std::cout << LengthofLongestPath("dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext") << "\n";
 
 	std::cin.get();
 
