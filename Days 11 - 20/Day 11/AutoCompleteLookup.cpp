@@ -71,7 +71,7 @@ void PrintVector(const std::vector<T>& values)
 		std::cout << value << " ";
 	}
 
-	std::cout << std::endl;
+	std::cout << "\n";
 }
 
 int main(int argc, char* argv[])
