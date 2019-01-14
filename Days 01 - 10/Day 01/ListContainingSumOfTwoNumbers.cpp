@@ -1,12 +1,10 @@
 #include <iostream>
 #include <unordered_set>
-#include <type_traits>
 #include <vector>
 
-template <typename T, typename = typename std::enable_if<std::is_integral<T>::value>::type>
-bool ContainsTwoNumberSum(const std::vector<T>& numberList, T total)
+bool ContainsTwoNumberSum(const std::vector<int>& numberList, int total)
 {
-	std::unordered_set<T> numberHash;
+	std::unordered_set<int> numberHash;
 
 	for (unsigned int i = 0; i < numberList.size(); i++)
 	{
@@ -14,10 +12,8 @@ bool ContainsTwoNumberSum(const std::vector<T>& numberList, T total)
 		{
 			return true;
 		}
-		else
-		{
-			numberHash.insert(numberList[i]);
-		}
+		
+		numberHash.insert(numberList[i]);
 	}
 	
 	return false;
