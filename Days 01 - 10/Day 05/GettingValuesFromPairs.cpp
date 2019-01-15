@@ -1,8 +1,3 @@
-/*
-	This type of problem is not well suited for C++ due to how its lambdas work
-	I had to make a workaround using a functor class
-*/
-
 #include <iostream>
 
 class HelperFunctor
