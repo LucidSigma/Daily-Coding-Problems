@@ -57,7 +57,7 @@ void PrintLinkedList(Node* head) noexcept
 		head = head->next;
 	}
 
-	std::cout << std::endl;
+	std::cout << "\n";
 }
 
 int main(int argc, const char* argv[])
