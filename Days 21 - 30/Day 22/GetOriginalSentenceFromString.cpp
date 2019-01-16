@@ -45,7 +45,7 @@ void PrintVector(const std::vector<T>& values) noexcept
 		std::cout << value << " ";
 	}
 
-	std::cout << std::endl;
+	std::cout << "\n";
 }
 
 int main(int argc, const char* argv[])

@@ -90,7 +90,7 @@ int main(int argc, const char* argv[])
 	Point start { 3, 0 };
 	Point end { 0, 0 };
 
-	std::cout << GetStepCount(matrix, start, end) << std::endl;
+	std::cout << GetStepCount(matrix, start, end) << "\n";
 
 	std::cin.get();
 

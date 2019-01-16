@@ -128,7 +128,7 @@ int main(int argc, const char* argv[])
 
 	if (leftright->IsLocked())
 	{
-		std::cout << "Node leftright is locked." << std::endl;
+		std::cout << "Node leftright is locked." << "\n";
 	}
 
 	std::cin.get();

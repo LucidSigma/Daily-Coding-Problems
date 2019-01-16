@@ -49,7 +49,7 @@ int main(int argc, const char* argv[])
 {
 	std::array<std::pair<int, int>, 3> times { std::make_pair(30, 75), std::make_pair(0, 50), std::make_pair(60, 150) };
 
-	std::cout << "Classrooms needed: " << FindClassroomCount(times) << std::endl;
+	std::cout << "Classrooms needed: " << FindClassroomCount(times) << "\n";
 
 	std::cin.get();
 
