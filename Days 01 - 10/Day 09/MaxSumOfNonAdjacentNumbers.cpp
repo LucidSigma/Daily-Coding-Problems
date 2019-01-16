@@ -1,13 +1,11 @@
 #include <algorithm>
 #include <iostream>
-#include <type_traits>
 #include <vector>
 
-template<typename T, typename = std::enable_if_t<std::is_arithmetic_v<T>>>
-T FindMaxNonAdjacentSum(const std::vector<T>& numbers)
+int FindMaxNonAdjacentSum(const std::vector<int>& numbers)
 {
-	T sumWithPrevious = numbers[0];
-	T sumWithoutPrevious = 0;
+	int sumWithPrevious = numbers[0];
+	int sumWithoutPrevious = 0;
 
 	for (unsigned int i = 1; i < numbers.size(); i++)
 	{
