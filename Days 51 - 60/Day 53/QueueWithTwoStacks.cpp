@@ -18,7 +18,7 @@ public:
 	{
 		if (stackA.empty())
 		{
-			return;
+			throw std::out_of_range("Queue is empty.");
 		}
 
 		SwapStacks(stackA, stackB);
