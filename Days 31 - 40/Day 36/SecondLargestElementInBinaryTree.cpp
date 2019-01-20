@@ -87,7 +87,7 @@ private:
 		{
 			node->left = InsertHelper(node->left, value);
 		}
-		else if (value > root->value)
+		else if (value > node->value)
 		{
 			node->right = InsertHelper(node->right, value);
 		}
