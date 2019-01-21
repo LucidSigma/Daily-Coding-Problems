@@ -235,7 +235,6 @@ std::vector<std::string> IterateCells(std::vector<Cell>& cells)
 		for (const auto& cell : newCells)
 		{
 			board[cell.x][cell.y] = static_cast<char>(CellStates::Alive);
-			cells.push_back(cell);
 		}
 
 		for (const auto& cell : deadCells)
