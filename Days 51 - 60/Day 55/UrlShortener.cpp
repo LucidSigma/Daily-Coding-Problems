@@ -1,6 +1,6 @@
 #include <iostream>
 #include <locale>
-#include <map>
+#include <unordered_map>
 #include <string>
 
 // Base64 encoding modified from https://github.com/ReneNyffenegger/cpp-base64
@@ -71,7 +71,7 @@ private:
 	static constexpr unsigned int CHARS_PER_CODE = 6;
 	static const std::string UrlPrefix;
 
-	static std::map<std::string, std::string> urlMap;
+	static std::unordered_map<std::string, std::string> urlMap;
 
 public:
 	static std::string Shorten(const std::string& url)
@@ -121,7 +121,7 @@ private:
 };
 
 const std::string UrlShortener::UrlPrefix = "https://www.sho.rt/";
-std::map<std::string, std::string> UrlShortener::urlMap;
+std::unordered_map<std::string, std::string> UrlShortener::urlMap;
 
 int main(int argc, const char* argv[])
 {
