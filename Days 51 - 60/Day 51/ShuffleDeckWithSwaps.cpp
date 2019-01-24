@@ -62,10 +62,8 @@ void PrintDeck(const std::vector<Card>& deck)
 
 		if (i < deck.size() - 1)
 		{
-			std::cout << ",";
+			std::cout << ", ";
 		}
-
-		std::cout << " ";
 	}
 
 	std::cout << "\n";
