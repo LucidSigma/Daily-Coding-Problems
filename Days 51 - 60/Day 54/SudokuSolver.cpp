@@ -23,17 +23,9 @@ bool FindEmptyCell(const std::array<std::array<unsigned int, BOX_SIZE>, BOX_SIZE
 
 bool IsValidNumber(const std::array<std::array<unsigned int, BOX_SIZE>, BOX_SIZE>& grid, unsigned int row, unsigned int column, unsigned int number) noexcept
 {
-	for (unsigned int c = 0; c < BOX_SIZE; c++)
+	for (unsigned int i = 0; i < BOX_SIZE; c++)
 	{
-		if (grid[row][c] == number)
-		{
-			return false;
-		}
-	}
-
-	for (unsigned int r = 0; r < BOX_SIZE; r++)
-	{
-		if (grid[r][column] == number)
+		if (grid[row][i] == number || grid[i][column] == number)
 		{
 			return false;
 		}

@@ -65,12 +65,7 @@ namespace DailyCodingProblem
 		{
 			for (int i = 0; i < BoxSize; i++)
 			{
-				if (grid[row, i] == number)
-				{
-					return false;
-				}
-
-				if (grid[i, column] == number)
+				if (grid[row, i] == number || grid[i, column] == number)
 				{
 					return false;
 				}

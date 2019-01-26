@@ -28,8 +28,8 @@ struct Cell
 		: x(x), y(y)
 	{ }
 
-friend bool operator <(const Cell& lhs, const Cell& rhs) noexcept;
-friend bool operator ==(const Cell& lhs, const Cell& rhs) noexcept;
+	friend bool operator <(const Cell& lhs, const Cell& rhs) noexcept;
+	friend bool operator ==(const Cell& lhs, const Cell& rhs) noexcept;
 };
 
 int Cell::minX = std::numeric_limits<int>::max();
@@ -64,67 +64,16 @@ unsigned int GetNeighbourCount(const std::vector<std::string>& board, unsigned i
 {
 	unsigned int count = 0;
 
-	if (x > 0)
+	for (unsigned int i = x - 1; i <= static_cast<int>(x + 1); i++)
 	{
-		if (y > 0)
+		for (unsigned int j = y - 1; j <= static_cast<int>(y + 1); j++)
 		{
-			if (board[x - 1][y - 1] == static_cast<char>(CellStates::Alive))
+			if (i >= 0 && i < static_cast<int>(board.size()) &&
+				j >= 0 && j < static_cast<int>(board[i].length()) &&
+				!(i == x && j == y) && board[i][j] == static_cast<char>(CellStates::Alive))
 			{
 				count++;
 			}
-		}
-
-		if (board[x - 1][y] == static_cast<char>(CellStates::Alive))
-		{
-			count++;
-		}
-
-		if (y < board[x].length() - 1)
-		{
-			if (board[x - 1][y + 1] == static_cast<char>(CellStates::Alive))
-			{
-				count++;
-			}
-		}
-	}
-
-	if (x < board.size() - 1)
-	{
-		if (y > 0)
-		{
-			if (board[x + 1][y - 1] == static_cast<char>(CellStates::Alive))
-			{
-				count++;
-			}
-		}
-
-		if (board[x + 1][y] == static_cast<char>(CellStates::Alive))
-		{
-			count++;
-		}
-
-		if (y < board[x].length() - 1)
-		{
-			if (board[x + 1][y + 1] == static_cast<char>(CellStates::Alive))
-			{
-				count++;
-			}
-		}
-	}
-
-	if (y > 0)
-	{
-		if (board[x][y - 1] == static_cast<char>(CellStates::Alive))
-		{
-			count++;
-		}
-	}
-
-	if (y < board[x].length() - 1)
-	{
-		if (board[x][y + 1] == static_cast<char>(CellStates::Alive))
-		{
-			count++;
 		}
 	}
 

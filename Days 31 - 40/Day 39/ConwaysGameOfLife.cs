@@ -200,67 +200,15 @@ namespace DailyCodingProblem
 		{
 			int count = 0;
 
-			if (x > 0)
+			for (int i = x - 1; i <= x + 1; i++)
 			{
-				if (y > 0)
+				for (int j = y - 1; j <= y + 1; j++)
 				{
-					if (IsAliveCell(x - 1, y - 1))
+					if (i >= 0 && i < board.Count && j >= 0 && j < board[i].Length &&
+						!(i == x && j == y) && IsAliveCell(i, j))
 					{
 						count++;
 					}
-				}
-
-				if (IsAliveCell(x - 1, y))
-				{
-					count++;
-				}
-
-				if (y < board[x].Length - 1)
-				{
-					if (IsAliveCell(x - 1, y + 1))
-					{
-						count++;
-					}
-				}
-			}
-
-			if (x < board.Count - 1)
-			{
-				if (y > 0)
-				{
-					if (IsAliveCell(x + 1, y - 1))
-					{
-						count++;
-					}
-				}
-
-				if (IsAliveCell(x + 1, y))
-				{
-					count++;
-				}
-
-				if (y < board[x].Length - 1)
-				{
-					if (IsAliveCell(x + 1, y + 1))
-					{
-						count++;
-					}
-				}
-			}
-
-			if (y > 0)
-			{
-				if (IsAliveCell(x, y - 1))
-				{
-					count++;
-				}
-			}
-
-			if (y < board[x].Length - 1)
-			{
-				if (IsAliveCell(x, y + 1))
-				{
-					count++;
 				}
 			}
 
