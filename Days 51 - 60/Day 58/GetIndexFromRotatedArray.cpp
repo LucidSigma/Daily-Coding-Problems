@@ -2,7 +2,7 @@
 #include <iostream>
 
 template <unsigned int Size>
-unsigned int GetIndexFromRotatedArrayHelper(const std::array<int, Size>& array, int number, unsigned first, unsigned int last) noexcept
+unsigned int GetIndexFromRotatedArrayHelper(const std::array<int, Size>& array, int number, unsigned int first, unsigned int last) noexcept
 {
 	unsigned int midIndex = first + ((last - first) / 2);
 
