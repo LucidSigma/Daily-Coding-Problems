@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 		std::array<char, 4> { 'F', 'A', 'C', 'I' },
 		std::array<char, 4> { 'O', 'B', 'Q', 'P' },
 		std::array<char, 4> { 'A', 'N', 'O', 'B' },
-		std::array<char, 4> { 'M', 'A', 'S', 'S' },
+		std::array<char, 4> { 'M', 'A', 'S', 'S' }
 	};
 
 	std::cout << std::boolalpha;
