@@ -18,7 +18,7 @@ float Pow(int x, int y)
 	unsigned int currentPower = 1;
 	unsigned int previousPower = 0;
 
-	float previousResult = 0;
+	float previousResult = 0.0f;
 	float result = x;
 
 	while (currentPower <= positiveY)
