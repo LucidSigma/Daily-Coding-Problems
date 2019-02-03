@@ -29,7 +29,7 @@ unsigned int TotalMatrixTraversals(unsigned int rows, unsigned int columns) noex
 		return 0;
 	}
 
-	return TotalMatrixTraversalsHelper(rows, columns, 0, 0);;
+	return TotalMatrixTraversalsHelper(rows, columns, 0, 0);
 }
 
 int main(int argc, char* argv[])
