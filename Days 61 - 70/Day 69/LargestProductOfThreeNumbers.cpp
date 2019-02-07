@@ -56,7 +56,7 @@ int GetMaxProductFromThreeNumbers(const std::array<int, Size>& numbers) noexcept
 	}
 
 	TripleMax maxPositives;
-	std::pair<int, int> smallestNegatives { std::numeric_limits<int>::max(), std::numeric_limits<int>::max() };
+	std::pair<int, int> minNegatives { std::numeric_limits<int>::max(), std::numeric_limits<int>::max() };
 	unsigned int negativeCount = 0;
 
 	for (int number : numbers)
@@ -67,7 +67,7 @@ int GetMaxProductFromThreeNumbers(const std::array<int, Size>& numbers) noexcept
 		}
 		else
 		{
-			AddToNegativePair(smallestNegatives, number);
+			AddToNegativePair(minNegatives, number);
 			negativeCount++;
 		}
 	}
@@ -76,7 +76,7 @@ int GetMaxProductFromThreeNumbers(const std::array<int, Size>& numbers) noexcept
 
 	if (negativeCount >= 2 && maxPositives.totalAdded >= 1)
 	{
-		productWithNegatives = smallestNegatives.first * smallestNegatives.second * maxPositives.a;
+		productWithNegatives = minNegatives.first * minNegatives.second * maxPositives.a;
 	}
 
 	int productWithoutNegatives = maxPositives.a * maxPositives.b * maxPositives.c;
