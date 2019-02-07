@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <array>
 #include <iostream>
 #include <limits>
@@ -81,7 +82,7 @@ int GetMaxProductFromThreeNumbers(const std::array<int, Size>& numbers) noexcept
 
 	int productWithoutNegatives = maxPositives.a * maxPositives.b * maxPositives.c;
 
-	return productWithoutNegatives > productWithNegatives ? productWithoutNegatives : productWithNegatives;
+	return std::max(productWithoutNegatives, productWithNegatives);
 }
 
 int main(int argc, char* argv[])
