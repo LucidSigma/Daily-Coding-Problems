@@ -81,7 +81,7 @@ namespace DailyCodingProblem
 
 			int productWithoutNegatives = maxPositives.A * maxPositives.B * maxPositives.C;
 
-			return productWithoutNegatives > productWithNegatives ? productWithoutNegatives : productWithNegatives;
+			return Math.Max(productWithoutNegatives, productWithNegatives);
 		}
 
 		private static void AddToNegativePair(ref (int, int) negativePair, int number)
