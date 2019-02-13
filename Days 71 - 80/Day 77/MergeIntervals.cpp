@@ -15,8 +15,8 @@ std::vector<std::pair<unsigned int, unsigned int>> MergeOverlappingIntervals(con
 		ends.insert(end);
 	}
 
-	unsigned int minStart = *std::min_element(starts.begin(), starts.end());
-	unsigned int maxEnd= *std::max_element(ends.begin(), ends.end());
+	const unsigned int minStart = *std::min_element(starts.begin(), starts.end());
+	const unsigned int maxEnd = *std::max_element(ends.begin(), ends.end());
 	int current = 0;
 	std::vector<int> statuses { current };
 
