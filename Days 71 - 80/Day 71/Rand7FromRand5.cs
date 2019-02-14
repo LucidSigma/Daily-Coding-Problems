@@ -2,7 +2,7 @@ using System;
 
 namespace DailyCodingProblem
 {
-	internal class Day45
+	internal class Day71
 	{
 		private static Random rng = new Random();
 
