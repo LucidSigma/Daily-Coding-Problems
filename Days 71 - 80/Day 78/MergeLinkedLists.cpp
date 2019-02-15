@@ -1,10 +1,7 @@
-#include <functional>
 #include <iostream>
 #include <queue>
 #include <type_traits>
 #include <vector>
-
-// SMART POINTERS
 
 struct Node
 {
