@@ -7,7 +7,7 @@
 class FileReader
 {
 private:
-	unsigned int offset = 0;
+	mutable unsigned int offset = 0;
 	const std::string contents;
 
 	std::string nBuffer = "";
@@ -17,7 +17,7 @@ public:
 		: contents(GetFileContents(filename))
 	{ }
 
-	std::string Read7() noexcept
+	std::string Read7() const noexcept
 	{
 		if (offset >= contents.length())
 		{
