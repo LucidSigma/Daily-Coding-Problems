@@ -23,13 +23,13 @@ struct std::hash<Coordinate>
 };
 
 template <unsigned int M, unsigned int N>
-bool AddIsland(unsigned int x, unsigned int y, const Matrix<M, N>& islandMap, CoordinateSet& visited) noexcept
+unsigned int AddIsland(unsigned int x, unsigned int y, const Matrix<M, N>& islandMap, CoordinateSet& visited) noexcept
 {
 	const Coordinate currentCoordinate = std::make_pair(x, y);
 
 	if (visited.find(currentCoordinate) != visited.end())
 	{
-		return false;
+		return 0;
 	}
 
 	visited.insert(currentCoordinate);
@@ -54,7 +54,7 @@ bool AddIsland(unsigned int x, unsigned int y, const Matrix<M, N>& islandMap, Co
 		AddIsland(x, y + 1, islandMap, visited);
 	}
 
-	return true;
+	return 1;
 }
 
 template <unsigned int M, unsigned int N>
