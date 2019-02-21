@@ -1,28 +1,20 @@
+#include <functional>
 #include <iostream>
 
-class HelperFunctor
+using PairFunction = std::function<int(int, int)>;
+using ReturnedFunction = std::function<int(PairFunction)>;
+
+ReturnedFunction cons(int a, int b)
 {
-private:
-	int a;
-	int b;
-
-public:
-	HelperFunctor(int a, int b)
-		: a(a), b(b)
-	{ }
-
-	int operator ()(int (* f)(int, int))
+	auto pair = [a, b](PairFunction f) -> int
 	{
 		return f(a, b);
-	}
-};
+	};
 
-HelperFunctor cons(int a, int b)
-{
-	return HelperFunctor(a, b);
+	return pair;
 }
 
-int car(HelperFunctor pair)
+int car(ReturnedFunction pair)
 {
 	auto firstVar = [](int a, int b) -> int
 	{
@@ -32,7 +24,7 @@ int car(HelperFunctor pair)
 	return pair(firstVar);
 }
 
-int cdr(HelperFunctor pair)
+int cdr(ReturnedFunction pair)
 {
 	auto secondVar = [](int a, int b) -> int
 	{
@@ -48,6 +40,6 @@ int main(int argc, char* argv[])
 	std::cout << cdr(cons(3, 4)) << "\n";
 
 	std::cin.get();
-	
+
 	return 0;
 }
