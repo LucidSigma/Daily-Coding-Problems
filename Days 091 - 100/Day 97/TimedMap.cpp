@@ -16,7 +16,7 @@ public:
 	{
 		if (timeMap.find(key) == std::end(timeMap))
 		{
-			timeMap[key] = { { time }, { value } };
+			timeMap.insert({ key, { { time }, { value } } });
 
 			return;
 		}
