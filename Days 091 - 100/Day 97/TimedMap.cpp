@@ -1,3 +1,5 @@
+#include <algorithm>
+#include <cmath>
 #include <iostream>
 #include <iterator>
 #include <optional>
@@ -22,7 +24,7 @@ public:
 		}
 
 		auto&[times, values] = timeMap[key];
-		unsigned int insertionIndex = GetInsertionIndex(times, time);
+		unsigned int insertionIndex = std::abs(std::distance(std::begin(times), std::upper_bound(std::begin(times), std::end(times), time)));
 
 		times.insert(std::begin(times) + insertionIndex, time);
 		values.insert(std::begin(values) + insertionIndex, value);
@@ -36,7 +38,7 @@ public:
 		}
 
 		const auto&[times, values] = timeMap[key];
-		unsigned int insertionIndex = GetInsertionIndex(times, time);
+		unsigned int insertionIndex = std::abs(std::distance(std::begin(times), std::upper_bound(std::begin(times), std::end(times), time)));
 
 		if (insertionIndex == 0)
 		{
@@ -44,20 +46,6 @@ public:
 		}
 
 		return values[insertionIndex - 1];
-	}
-
-private:
-	unsigned int GetInsertionIndex(const std::vector<int> times, int time) noexcept
-	{
-		for (unsigned int i = 0; i < times.size(); i++)
-		{
-			if (time < times[i])
-			{
-				return i;
-			}
-		}
-
-		return times.size();
 	}
 };
 
