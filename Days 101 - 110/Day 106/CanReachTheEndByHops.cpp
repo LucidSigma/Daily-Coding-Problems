@@ -5,10 +5,10 @@
 
 bool CanReachTheEnd(const std::vector<int>& hops) noexcept
 {
-	unsigned int currentIndex = 0;
+	int currentIndex = 0;
 	std::unordered_set<int> visitedIndices;
 
-	while (currentIndex < hops.size() - 1)
+	while (currentIndex < static_cast<int>(hops.size() - 1))
 	{
 		if (currentIndex < 0 || hops[currentIndex] == 0)
 		{
