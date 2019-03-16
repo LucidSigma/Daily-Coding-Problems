@@ -5,14 +5,14 @@
 
 bool CanStringBecomeAnotherByShifting(const std::string& a, const std::string& b) noexcept
 {
-	if (a.length() != b.length())
+	if (a.length() != b.length() || (a.empty() && b.empty()))
 	{
 		return false;
 	}
 
 	std::string shiftedString = a;
 
-	for (unsigned int i = 1; i < a.length() - 1; i++)
+	for (unsigned int i = 1; i < a.length(); i++)
 	{
 		std::rotate(std::begin(shiftedString), std::begin(shiftedString) + 1, std::end(shiftedString));
 
