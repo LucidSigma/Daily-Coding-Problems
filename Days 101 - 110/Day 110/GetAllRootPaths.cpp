@@ -34,6 +34,11 @@ void GetAllRootPathsHelper(const std::shared_ptr<Node>& node, std::vector<int>& 
 
 std::vector<std::vector<int>> GetAllRootPaths(const std::shared_ptr<Node>& root) noexcept
 {
+	if (root == nullptr)
+	{
+		return { };
+	}
+	
 	std::vector<std::vector<int>> allPaths;
 	std::vector<int> currentPath;
 
