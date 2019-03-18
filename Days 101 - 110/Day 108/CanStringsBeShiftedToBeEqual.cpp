@@ -12,7 +12,7 @@ bool CanStringBecomeAnotherByShifting(const std::string& a, const std::string& b
 
 	std::string shiftedString = a;
 
-	for (unsigned int i = 1; i < a.length(); i++)
+	for (unsigned int i = 0; i < a.length() - 1; i++)
 	{
 		std::rotate(std::begin(shiftedString), std::begin(shiftedString) + 1, std::end(shiftedString));
 
