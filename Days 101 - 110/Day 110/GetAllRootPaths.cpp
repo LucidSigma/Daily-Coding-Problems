@@ -9,7 +9,7 @@ struct Node
 	std::shared_ptr<Node> left;
 	std::shared_ptr<Node> right;
 
-	explicit Node(int value, const std::shared_ptr<Node> left = nullptr, const std::shared_ptr<Node> right = nullptr) noexcept
+	explicit Node(int value, const std::shared_ptr<Node>& left = nullptr, const std::shared_ptr<Node>& right = nullptr) noexcept
 		: value(value), left(left), right(right)
 	{ }
 };
