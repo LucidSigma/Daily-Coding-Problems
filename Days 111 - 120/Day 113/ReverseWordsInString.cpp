@@ -20,7 +20,7 @@ std::vector<std::string> SplitString(const std::string& text, char delimiter = '
 	return tokens;
 }
 
-inline std::vector<std::string> ReverseVector(std::vector<std::string> strings) noexcept
+inline std::vector<std::string> ReverseVector(std::vector<std::string>&& strings) noexcept
 {
 	return std::reverse(std::begin(strings), std::end(strings)), strings;
 }
