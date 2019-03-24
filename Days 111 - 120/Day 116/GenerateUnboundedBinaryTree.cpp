@@ -18,7 +18,7 @@ inline int RandomInt() noexcept
 {
 	static std::random_device randomSeed;
 	static std::mt19937 randomEngine(randomSeed());
-	static std::uniform_int_distribution<unsigned int> randomRange(1, 100);
+	static std::uniform_int_distribution<int> randomRange(1, 100);
 
 	return randomRange(randomEngine);
 }
