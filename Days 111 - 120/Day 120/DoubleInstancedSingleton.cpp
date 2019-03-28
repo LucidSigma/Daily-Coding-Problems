@@ -17,7 +17,7 @@ public:
 	{
 		static DoubleSingleton instanceA;
 		static DoubleSingleton instanceB;
-		static bool instanceDecider = false;
+		static bool instanceDecider = true;
 
 		instanceDecider = !instanceDecider;
 
@@ -27,10 +27,10 @@ public:
 
 int main(int argc, char* argv[])
 {
-	std::cout << &DoubleSingleton::GetInstance() << "\n";	// Instance 1
 	std::cout << &DoubleSingleton::GetInstance() << "\n";	// Instance 2
 	std::cout << &DoubleSingleton::GetInstance() << "\n";	// Instance 1
 	std::cout << &DoubleSingleton::GetInstance() << "\n";	// Instance 2
+	std::cout << &DoubleSingleton::GetInstance() << "\n";	// Instance 1
 
 	std::cin.get();
 
