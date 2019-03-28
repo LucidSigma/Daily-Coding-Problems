@@ -10,8 +10,8 @@ public:
 	DoubleSingleton(const DoubleSingleton&) noexcept = delete;
 	DoubleSingleton(DoubleSingleton&&) noexcept = delete;
 
-	DoubleSingleton& operator =(const DoubleSingleton&) = delete;
-	DoubleSingleton& operator =(DoubleSingleton&&) = delete;
+	DoubleSingleton& operator =(const DoubleSingleton&) noexcept = delete;
+	DoubleSingleton& operator =(DoubleSingleton&&) noexcept = delete;
 
 	static DoubleSingleton& GetInstance() noexcept
 	{
