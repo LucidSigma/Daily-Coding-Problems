@@ -29,6 +29,17 @@ bool IsNumberString(const std::string& numberString) noexcept
 			{
 			case NonNumericSymbols::PositiveSign:
 			case NonNumericSymbols::NegativeSign:
+				if (i != 0)
+				{
+					if (numberString[i - 1] == NonNumericSymbols::PositiveSign || numberString[i - 1] == NonNumericSymbols::NegativeSign ||
+						numberString[i - 1] == NonNumericSymbols::BinaryIndicator || numberString[i - 1] == NonNumericSymbols::HexadecimalIndicator ||
+						numberString[i - 1] == NonNumericSymbols::DigitSeparator || numberString[i - 1] == NonNumericSymbols::CSharpDigitSeparator ||
+						numberString[i - 1] == NonNumericSymbols::DecimalPoint)
+					{
+						return false;
+					}
+				}
+
 				if (!(i == 0 || 
 					(numberString[i - 1] == NonNumericSymbols::ScientificExponent || numberString[i - 1] == NonNumericSymbols::ScientificExponentCapital) 
 					 && i != endIndex))
@@ -40,6 +51,17 @@ bool IsNumberString(const std::string& numberString) noexcept
 
 			case NonNumericSymbols::ScientificExponent:
 			case NonNumericSymbols::ScientificExponentCapital:
+				if(i != 0)
+				{
+					if (numberString[i - 1] == NonNumericSymbols::ScientificExponent || numberString[i - 1] == NonNumericSymbols::ScientificExponentCapital || 
+						numberString[i - 1] == NonNumericSymbols::PositiveSign || numberString[i - 1] == NonNumericSymbols::NegativeSign ||
+						numberString[i - 1] == NonNumericSymbols::DigitSeparator || numberString[i - 1] == NonNumericSymbols::CSharpDigitSeparator ||
+						numberString[i - 1] == NonNumericSymbols::DecimalPoint)
+					{
+						return false;
+					}
+				}
+
 				if (i == 0 || i == endIndex)
 				{
 					return false;
@@ -48,9 +70,15 @@ bool IsNumberString(const std::string& numberString) noexcept
 				[[fallthrough]];
 
 			case NonNumericSymbols::DecimalPoint:
-				if (i == 0)
+				if (i != 0)
 				{
-					return false;
+					if (numberString[i - 1] == NonNumericSymbols::ScientificExponent || numberString[i - 1] == NonNumericSymbols::ScientificExponentCapital ||
+						numberString[i - 1] == NonNumericSymbols::BinaryIndicator || numberString[i - 1] == NonNumericSymbols::HexadecimalIndicator ||
+						numberString[i - 1] == NonNumericSymbols::DigitSeparator || numberString[i - 1] == NonNumericSymbols::CSharpDigitSeparator ||
+						numberString[i - 1] == NonNumericSymbols::DecimalPoint)
+					{
+						return false;
+					}
 				}
 
 				break;
@@ -67,15 +95,20 @@ bool IsNumberString(const std::string& numberString) noexcept
 				break;
 
 			case NonNumericSymbols::DigitSeparator:
-				if (i == 0 || i == endIndex || numberString[i - 1] == NonNumericSymbols::DigitSeparator)
+			case NonNumericSymbols::CSharpDigitSeparator:
+				if (i != 0)
 				{
-					return false;
+					if (numberString[i - 1] == NonNumericSymbols::ScientificExponent || numberString[i - 1] == NonNumericSymbols::ScientificExponentCapital ||
+						numberString[i - 1] == NonNumericSymbols::PositiveSign || numberString[i - 1] == NonNumericSymbols::NegativeSign ||
+						numberString[i - 1] == NonNumericSymbols::BinaryIndicator || numberString[i - 1] == NonNumericSymbols::HexadecimalIndicator ||
+						numberString[i - 1] == NonNumericSymbols::DigitSeparator || numberString[i - 1] == NonNumericSymbols::CSharpDigitSeparator ||
+						numberString[i - 1] == NonNumericSymbols::DecimalPoint)
+					{
+						return false;
+					}
 				}
 
-				break;
-
-			case NonNumericSymbols::CSharpDigitSeparator:
-				if (i == 0 || i == endIndex || numberString[i - 1] == NonNumericSymbols::CSharpDigitSeparator)
+				if (i == 0 || i == endIndex)
 				{
 					return false;
 				}
