@@ -20,7 +20,7 @@ inline void SolveTowerOfHanoi(const unsigned int discCount) noexcept
 {
 	std::cout << "Solution for Tower of Hanoi with " << discCount << " discs:\n";
 
-	SolveTowerOfHanoiHelper(3, 'A', 'B', 'C');
+	SolveTowerOfHanoiHelper(discCount, 'A', 'B', 'C');
 }
 
 int main(int argc, char* argv[])
