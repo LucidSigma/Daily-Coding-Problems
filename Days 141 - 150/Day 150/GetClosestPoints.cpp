@@ -22,8 +22,6 @@ std::vector<Point> GetClosestPoints(const std::vector<Point>& points, const Poin
 		throw std::invalid_argument("Point count greater than number of points given.");
 	}
 
-	int i = 4;
-
 	std::vector<Point> sortedPoints = points;
 	std::sort(std::begin(sortedPoints), std::end(sortedPoints),
 		[&centralPoint = std::as_const(centralPoint)](const Point & lhs, const Point & rhs) noexcept -> bool
