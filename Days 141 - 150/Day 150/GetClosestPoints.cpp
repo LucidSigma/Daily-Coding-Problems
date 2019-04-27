@@ -1,22 +1,12 @@
+#include <algorithm>
 #include <cmath>
 #include <iostream>
 #include <iterator>
-#include <set>
+#include <stdexcept>
 #include <utility>
 #include <vector>
 
 using Point = std::pair<int, int>;
-
-struct PointDistance
-{
-	Point point;
-	unsigned int distance;
-};
-
-inline bool operator <(const PointDistance& lhs, const PointDistance& rhs) noexcept
-{
-	return lhs.distance < rhs.distance;
-}
 
 std::ostream& operator <<(std::ostream& outputStream, const Point& point) noexcept
 {
@@ -25,26 +15,23 @@ std::ostream& operator <<(std::ostream& outputStream, const Point& point) noexce
 	return outputStream;
 }
 
-std::vector<Point> GetClosestPoints(const std::vector<Point>& points, const Point& centralPoint, const unsigned int k) noexcept
+std::vector<Point> GetClosestPoints(const std::vector<Point>& points, const Point& centralPoint, const unsigned int k)
 {
-	std::set<PointDistance> sortedPoints;
-
-	for (const auto& point : points)
+	if (k > points.size())
 	{
-		unsigned int currentDistance = std::abs(point.first + centralPoint.first) + std::abs(point.second + centralPoint.second);
-		sortedPoints.insert({ point, currentDistance });
+		throw std::invalid_argument("Point count greater than number of points given.");
 	}
 
-	std::vector<Point> closestPoints(k);
-	auto sortedPointsIterator = std::cbegin(sortedPoints);
-
-	for (unsigned int i = 0; i < closestPoints.size() && sortedPointsIterator != std::cend(sortedPoints); i++)
+	std::vector<Point> sortedPoints = points;
+	std::sort(std::begin(sortedPoints), std::end(sortedPoints), [&centralPoint](const Point& lhs, const Point& rhs) noexcept -> bool
 	{
-		closestPoints[i] = sortedPointsIterator->point;
-		sortedPointsIterator++;
-	}
+		unsigned int leftDistance = std::abs(lhs.first + centralPoint.first) + std::abs(lhs.second + centralPoint.second);
+		unsigned int rightDistance = std::abs(rhs.first + centralPoint.first) + std::abs(rhs.second + centralPoint.second);
 
-	return closestPoints;
+		return leftDistance < rightDistance;
+	});
+
+	return std::vector<Point>(std::cbegin(sortedPoints), std::cbegin(sortedPoints) + k);
 }
 
 template <typename T>
