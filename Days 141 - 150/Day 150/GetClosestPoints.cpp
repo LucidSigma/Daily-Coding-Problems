@@ -22,14 +22,18 @@ std::vector<Point> GetClosestPoints(const std::vector<Point>& points, const Poin
 		throw std::invalid_argument("Point count greater than number of points given.");
 	}
 
-	std::vector<Point> sortedPoints = points;
-	std::sort(std::begin(sortedPoints), std::end(sortedPoints), [&centralPoint](const Point& lhs, const Point& rhs) noexcept -> bool
-	{
-		unsigned int leftDistance = std::abs(lhs.first + centralPoint.first) + std::abs(lhs.second + centralPoint.second);
-		unsigned int rightDistance = std::abs(rhs.first + centralPoint.first) + std::abs(rhs.second + centralPoint.second);
+	int i = 4;
 
-		return leftDistance < rightDistance;
-	});
+	std::vector<Point> sortedPoints = points;
+	std::sort(std::begin(sortedPoints), std::end(sortedPoints),
+		[&centralPoint = std::as_const(centralPoint)](const Point & lhs, const Point & rhs) noexcept -> bool
+		{
+			unsigned int leftDistance = std::abs(lhs.first + centralPoint.first) + std::abs(lhs.second + centralPoint.second);
+			unsigned int rightDistance = std::abs(rhs.first + centralPoint.first) + std::abs(rhs.second + centralPoint.second);
+			
+			return leftDistance < rightDistance;
+		}
+	);
 
 	return std::vector<Point>(std::cbegin(sortedPoints), std::cbegin(sortedPoints) + k);
 }
