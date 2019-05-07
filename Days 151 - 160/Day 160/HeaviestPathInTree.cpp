@@ -57,7 +57,7 @@ unsigned int GetHeaviestPathHelper(const std::shared_ptr<Node>& node) noexcept
 		childrenLengths.push_back(GetHeaviestPathHelper(child));
 	}
 
-	unsigned int maxChildPathLength = *std::max_element(std::cbegin(childrenLengths), std::cend(childrenLengths));
+	const unsigned int maxChildPathLength = *std::max_element(std::cbegin(childrenLengths), std::cend(childrenLengths));
 	std::sort(std::begin(aggregateWeights), std::end(aggregateWeights));
 
 	return std::max(aggregateWeights.back() + *(std::cend(aggregateWeights) - 2), maxChildPathLength);
