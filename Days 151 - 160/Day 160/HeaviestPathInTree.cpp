@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <functional>
 #include <initializer_list>
 #include <iostream>
 #include <iterator>
@@ -58,9 +59,9 @@ unsigned int GetHeaviestPathHelper(const std::shared_ptr<Node>& node) noexcept
 	}
 
 	const unsigned int maxChildPathLength = *std::max_element(std::cbegin(childrenLengths), std::cend(childrenLengths));
-	std::sort(std::begin(aggregateWeights), std::end(aggregateWeights));
+	std::sort(std::begin(aggregateWeights), std::end(aggregateWeights), std::greater<unsigned int>());
 
-	return std::max(aggregateWeights.back() + *(std::cend(aggregateWeights) - 2), maxChildPathLength);
+	return std::max(aggregateWeights[0] + aggregateWeights[1], maxChildPathLength);
 }
 
 inline unsigned int GetHeaviestPath(const std::shared_ptr<Node>& root) noexcept
