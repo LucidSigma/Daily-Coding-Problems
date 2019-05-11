@@ -5,8 +5,8 @@
 
 inline unsigned int FindDuplicate(const std::vector<unsigned int>& numbers) noexcept
 {
-	unsigned int sumWithoutDuplicate = numbers.size() * (numbers.size() - 1) / 2;
-	unsigned int sumWithDuplicate = std::accumulate(std::cbegin(numbers), std::cend(numbers), 0);
+	const unsigned int sumWithoutDuplicate = numbers.size() * (numbers.size() - 1) / 2;
+	const unsigned int sumWithDuplicate = std::accumulate(std::cbegin(numbers), std::cend(numbers), 0);
 
 	return sumWithDuplicate - sumWithoutDuplicate;
 }
