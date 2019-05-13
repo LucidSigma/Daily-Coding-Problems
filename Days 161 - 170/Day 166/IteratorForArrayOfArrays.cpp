@@ -8,9 +8,6 @@ class Iterator
 private:
 	const std::vector<std::vector<int>>& values;
 
-	unsigned int currentIndex = 0;
-	unsigned int currentSubIndex = 0;
-
 	std::optional<int> next;
 
 public:
@@ -25,7 +22,7 @@ public:
 			throw std::invalid_argument("Proceeded past end of iterator.");
 		}
 		
-		int nextValue = next.value();
+		const int nextValue = next.value();
 		next = GetNext();
 
 		return nextValue;
