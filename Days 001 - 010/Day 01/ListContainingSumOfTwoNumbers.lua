@@ -3,7 +3,7 @@ function contains_two_number_sum(array, total)
 
 	for i = 1, #array
 	do
-		if number_hash[total - array[i]] ~= nil
+		if number_hash[total - array[i]]
 		then
 			return true
 		end
