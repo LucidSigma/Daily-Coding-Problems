@@ -56,7 +56,20 @@ int main(int argc, char* argv[])
 
 	InterleaveStack(stack);
 
-	std::cout << " After interleave: " << stack << "\n";
+	std::cout << " After interleave: " << stack << "\n\n";
+
+	std::stack<int> stack2;
+
+	for (unsigned int i = 1; i <= 4; ++i)
+	{
+		stack2.push(i);
+	}
+
+	std::cout << "Before interleave: " << stack2 << "\n";
+
+	InterleaveStack(stack2);
+
+	std::cout << " After interleave: " << stack2 << "\n";
 
 	std::cin.get();
 
