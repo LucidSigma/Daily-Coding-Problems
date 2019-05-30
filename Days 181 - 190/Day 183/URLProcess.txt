@@ -1,0 +1,11 @@
+The URL is parsed and determined if it is a link or search term.
+The non-ASCII Unicode charaters are converted in the hostname.
+The HSTS list is checked to see if the contact protocol is HTTP or HTTPS.
+The browser does a DNS lookup to get the IP address.
+The ARP process occurs where it finds the MAC address.
+A socket is opened and the client and server complete a TLS handshake.
+The HTTP operations send a GET request to the host, which usually responds with the website information (such as HTML).
+The browser then parses the HTML, CSS and JavaScript and creates the DOM tree.
+The page is structued from the HTML and interpreted from the CSS; then the page is rendered.
+
+More elaborate explanation at https://github.com/alex/what-happens-when.
