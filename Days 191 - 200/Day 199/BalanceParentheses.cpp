@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-std::string BalanceParentheses(const std::string& parentheses)
+std::string BalanceParentheses(const std::string& parentheses) noexcept
 {
 	using namespace std::literals::string_literals;
 
