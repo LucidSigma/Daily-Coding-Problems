@@ -53,6 +53,11 @@ std::vector<int> GetBottomView(std::shared_ptr<Node>& root) noexcept
 	return bottomView;
 }
 
+inline bool operator <(const std::shared_ptr<Node>& lhs, const std::shared_ptr<Node>& rhs) noexcept
+{
+	return lhs->value < rhs->value;
+}
+
 template <typename T>
 std::ostream& operator <<(std::ostream& outputStream, const std::vector<T>& values) noexcept
 {
