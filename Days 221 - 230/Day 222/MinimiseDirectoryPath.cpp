@@ -30,7 +30,7 @@ std::string MinimisePath(const std::string& path) noexcept
 	{
 		static const std::string currentDirectory = ".";
 		static const std::string previousDirectory = "..";
-	
+
 		if (directory == previousDirectory && !directoryStack.empty())
 		{
 			directoryStack.pop();
@@ -41,15 +41,13 @@ std::string MinimisePath(const std::string& path) noexcept
 		}
 	}
 
-	std::string minimisedDirectory;
-
+	std::string minimisedDirectory(1, DirectorySeparator);
+	
 	while (!directoryStack.empty())
 	{
 		minimisedDirectory = DirectorySeparator + directoryStack.top() + minimisedDirectory;
 		directoryStack.pop();
 	}
-
-	minimisedDirectory += DirectorySeparator;
 
 	return minimisedDirectory;
 }
