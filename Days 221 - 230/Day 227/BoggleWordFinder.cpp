@@ -5,7 +5,6 @@
 #include <iostream>
 #include <iterator>
 #include <string>
-#include <type_traits>
 #include <vector>
 
 static constexpr size_t GridSize = 4u;
