@@ -6,6 +6,7 @@
 #include <optional>
 #include <queue>
 #include <string>
+#include <utility>
 #include <vector>
 
 std::optional<std::string> RearrageAdjacentCharacters(const std::string& string) noexcept
