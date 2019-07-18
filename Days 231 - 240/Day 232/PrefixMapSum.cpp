@@ -27,6 +27,10 @@ public:
 			{
 				sum += value;
 			}
+			else if (key > prefix)
+			{
+				break;
+			}
 		}
 
 		return sum;
