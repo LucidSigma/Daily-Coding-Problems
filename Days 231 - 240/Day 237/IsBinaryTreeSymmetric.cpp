@@ -17,7 +17,7 @@ struct Node
 	{ }
 };
 
-void UpdateNodeLevels(const std::shared_ptr<Node>& root, std::unordered_map<unsigned int, std::vector<int>>& nodeLevels, const unsigned int currentLevel) noexcept
+void SetNodeLevels(const std::shared_ptr<Node>& root, std::unordered_map<unsigned int, std::vector<int>>& nodeLevels, const unsigned int currentLevel) noexcept
 {
 	if (nodeLevels.find(currentLevel) == std::cend(nodeLevels))
 	{
@@ -28,14 +28,14 @@ void UpdateNodeLevels(const std::shared_ptr<Node>& root, std::unordered_map<unsi
 
 	for (const auto& child : root->children)
 	{
-		UpdateNodeLevels(child, nodeLevels, currentLevel + 1);
+		SetNodeLevels(child, nodeLevels, currentLevel + 1);
 	}
 }
 
 bool IsSymmetric(const std::shared_ptr<Node>& root) noexcept
 {
 	std::unordered_map<unsigned int, std::vector<int>> nodeLevels;
-	UpdateNodeLevels(root, nodeLevels, 0);
+	SetNodeLevels(root, nodeLevels, 0);
 
 	for (const auto& [level, levels] : nodeLevels)
 	{
