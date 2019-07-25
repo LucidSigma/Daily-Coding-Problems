@@ -1,0 +1,8 @@
+The minimum number of swaps required is N - 1.
+
+The first swap will connect the first couple; leaving N - 1 couples left to connect at a total of 1 swap.
+The second swap will connect the second couple; leaving N - 2 couples left to connect at a total of 2 swaps.
+
+Continuing this until the (N - 1)th swap, which will connect the (N - 1)th couple will have connected N - 1 couples.
+However, since there is only one couple remaining after the (N - 1)th swap, they are already connected.
+This means that only N - 1 swaps are needed to make each couple sit side by side.
