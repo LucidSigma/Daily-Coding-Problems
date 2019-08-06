@@ -1,0 +1,9 @@
+An external merge sort is a viable option.
+
+- Divide the data into smaller heaps that fit on memory
+- Read a single heap into memory and sort it using an efficient algorithm (quicksort, mergesort, et cetera)
+- Write the sorted heap to a file
+- Repeat the previous two steps for each heap
+- Read the first few (about several thousand) numbers from each file into memory
+- Merge each of these mini-heaps in memory into a single sorted heap and write it to file
+- Repeat the previous two steps until all numbers have been sorted and appended to the file
