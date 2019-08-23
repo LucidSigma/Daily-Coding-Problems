@@ -3,6 +3,8 @@
 
 constexpr bool IsPowerOfFour(const unsigned int x) noexcept
 {
+	static_assert(sizeof(int) * 8u == 32u);
+
 	return (static_cast<unsigned int>(static_cast<int>(x) & -static_cast<int>(x)) & 0x55555554) == x || x == 1;
 }
 
