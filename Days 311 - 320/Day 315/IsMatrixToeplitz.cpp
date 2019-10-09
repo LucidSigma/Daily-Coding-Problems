@@ -46,7 +46,7 @@ bool IsMatrixToeplitz(const Matrix<M, N>& matrix)
 
 int main(const int argc, const char* const argv[])
 {
-	const Matrix<4, 5>& matrix
+	const Matrix<4, 5> matrix
 	{
 		std::array<int, 5>{ 1, 2, 3, 4, 8 },
 		std::array<int, 5>{ 5, 1, 2, 3, 4 },
