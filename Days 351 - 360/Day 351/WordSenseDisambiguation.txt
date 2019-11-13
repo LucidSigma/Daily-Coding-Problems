@@ -1,0 +1,6 @@
+Compare the current word to other words in the sentences to gain a context.
+A machine learning algorithm can be used to create a neural network of linked words - and can be trained by analysis many different sentences containing the same context of the word.
+This neural network can be compared to the list of definitions to find the most likely meaning.
+Some fuzzy logic will still need to be used, since some definitions might be too similar to distinguish and it will have to be guessed.
+
+More information: https://en.wikipedia.org/wiki/Word-sense_disambiguation
