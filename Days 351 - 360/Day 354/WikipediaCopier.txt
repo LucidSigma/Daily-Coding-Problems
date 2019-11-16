@@ -1,0 +1,16 @@
+The main page can be used to generate a queue that will contain all the links.
+The server will then process these queues - which will consist of sending them to the client.
+The client will download and parse each page and store them in a database.
+The client will also test if the current version of the page is newer than the stored version.
+
+How will you reach as many pages as possible?
+	Scan each page for links and add them to the processing queue.
+
+How can you keep track of pages that have already been visited?
+	Using a cache that spans multiple servers/clients that can be looked up quickly.
+
+How will you deal with your client machines being blacklisted?
+	Ue cloud-computing instance provisioning after a certain amount of requests fail.
+
+How can you update your database when Wikipedia pages are added or updated?
+	Put timestamps on each stored page and compare it to the date of the current page.
